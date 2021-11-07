@@ -21,16 +21,7 @@ public class WordListAdapter extends
         mInflater = LayoutInflater.from(context);
         this.mWordList = wordList;
     }
-    class WordViewHolder extends RecyclerView.ViewHolder {
-        public final TextView wordItemView;
-        final WordListAdapter mAdapter;
 
-        public WordViewHolder(View itemView, WordListAdapter adapter) {
-            super(itemView);
-            wordItemView = itemView.findViewById(R.id.word);
-            this.mAdapter = adapter;
-        }
-    }
 
     @NonNull
     @Override
@@ -49,8 +40,19 @@ public class WordListAdapter extends
 
     @Override
     public int getItemCount() {
+
         return mWordList.size();
     }
 
+    class WordViewHolder extends RecyclerView.ViewHolder {
+        public final TextView wordItemView;
+        final WordListAdapter mAdapter;
+
+        public WordViewHolder(View itemView, WordListAdapter adapter) {
+            super(itemView);
+            wordItemView = itemView.findViewById(R.id.word);
+            this.mAdapter = adapter;
+        }
+    }
 
 }
